@@ -1,0 +1,9 @@
+[
+  {
+    "name": "contractAddress-nftId",
+    "path": "/:contractAddress?/:nftId",
+    "component": "/Users/bajochero/dev/node/nft-element-sdk/pages/_contractAddress/_nftId/index.vue",
+    "chunkName": "pages/_contractAddress/_nftId/index",
+    "_name": "_86774a00"
+  }
+]
