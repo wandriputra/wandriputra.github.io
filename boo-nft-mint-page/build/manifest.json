@@ -1,0 +1,8 @@
+{
+  "build/main.css": "/build/main.css",
+  "build/main.js": "/build/main.js",
+  "build/images/logo.jpg": "/build/images/logo.jpg",
+  "build/images/preview.gif": "/build/images/preview.gif",
+  "build/images/preview.png": "/build/images/preview.png",
+  "build/images/fav.png": "/build/images/fav.png"
+}
