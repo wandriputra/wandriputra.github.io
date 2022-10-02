@@ -1,8 +1,14 @@
 {
-  "build/main.css": "./main.css",
-  "build/main.js": "./main.js",
-  "build/images/logo.jpg": "./images/logo.jpg",
-  "build/images/preview.gif": "./images/preview.gif",
-  "build/images/preview.png": "./images/preview.png",
-  "build/images/fav.png": "./images/fav.png"
+  "build/main.css": "/build/main.css",
+  "build/main.js": "/build/main.js",
+  "build/images/logo.jpg": "/build/images/logo.jpg",
+  "build/images/preview.gif": "/build/images/preview.gif",
+  "build/images/text_mint.webp": "/build/images/text_mint.webp",
+  "build/images/price_nft.png": "/build/images/price_nft.png",
+  "build/images/Bat.png": "/build/images/Bat.png",
+  "build/images/connect-wallet.png": "/build/images/connect-wallet.png",
+  "build/images/preview.png": "/build/images/preview.png",
+  "build/images/logo.webp": "/build/images/logo.webp",
+  "build/images/fav.png": "/build/images/fav.png",
+  "build/images/box-mint.png": "/build/images/box-mint.png"
 }
