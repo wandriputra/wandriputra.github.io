@@ -7,28 +7,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        terminal: {
-          bg: '#0F172A', // Slate 900
-          text: '#38BDF8', // Sky 400
-          dim: '#94A3B8', // Slate 400
-          green: '#22C55E', // Green 500
-          yellow: '#EAB308', // Yellow 500
-          red: '#EF4444', // Red 500
+        glass: {
+          100: 'rgba(255, 255, 255, 0.1)',
+          200: 'rgba(255, 255, 255, 0.2)',
+          300: 'rgba(255, 255, 255, 0.3)',
+          dark: 'rgba(0, 0, 0, 0.3)',
         }
       },
       fontFamily: {
-        mono: ['"Fira Code"', 'monospace'], // Suggest Fira Code if available, fallback to monospace
+        sans: ['Inter', 'system-ui', 'sans-serif'],
       },
-      animation: {
-        blink: 'blink 1s step-end infinite',
-      },
-      keyframes: {
-        blink: {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0' },
-        }
+      backgroundImage: {
+        'gradient-mesh': "radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%)",
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
