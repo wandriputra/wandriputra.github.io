@@ -3,48 +3,34 @@
 @tailwind utilities;
 
 :root {
-  background-color: #09090b;
-  color: #fafafa;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
 }
 
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: #09090b; /* Zinc 950 */
-  /* Dot Pattern Background */
-  background-image: radial-gradient(#27272a 1px, transparent 1px);
-  background-size: 24px 24px;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden; /* App-like feel */
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar (VS Code style) */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #09090b; 
+  background: transparent; 
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a; 
-  border-radius: 4px;
+  background: #424242; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46; 
+  background: #4f4f4f; 
 }
 
-@layer components {
-  .bento-card {
-    @apply bg-zinc-900/50 border border-zinc-800 rounded-3xl overflow-hidden hover:border-zinc-700 transition-colors duration-300;
-  }
-  
-  .bento-title {
-    @apply text-zinc-100 font-semibold mb-2;
-  }
-
-  .bento-text {
-    @apply text-zinc-400 text-sm leading-relaxed;
-  }
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
