@@ -1,36 +1,38 @@
 import { NavLink } from 'react-router-dom';
-import { Home, User, Code, BookOpen, Github, Linkedin } from 'lucide-react';
+import { Home, BookOpen, User, Briefcase } from 'lucide-react';
 
 const Navbar = () => {
   const navItems = [
-    { to: "/", icon: <Home size={20} />, label: "Home" },
-    { to: "/#about", icon: <User size={20} />, label: "About" }, // We'll handle scroll separately
-    { to: "/#projects", icon: <Code size={20} />, label: "Projects" },
-    { to: "/#blog", icon: <BookOpen size={20} />, label: "Blog" },
+    { to: "/", icon: <Home size={18} />, label: "Home" },
+    { to: "/#about", icon: <User size={18} />, label: "About" },
+    { to: "/#projects", icon: <Briefcase size={18} />, label: "Work" },
+    { to: "/#blog", icon: <BookOpen size={18} />, label: "Blog" },
   ];
 
   return (
-    <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 sm:top-6 sm:bottom-auto">
-      <div className="flex items-center gap-2 px-6 py-3 bg-black/40 backdrop-blur-2xl border border-white/10 rounded-full shadow-2xl">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.label}
-            to={item.to}
-            className={({ isActive }) => 
-              `p-3 rounded-full transition-all duration-300 hover:bg-white/10 ${isActive && item.to === '/' ? 'bg-white/20 text-white' : 'text-gray-400 hover:text-white'}`
-            }
-            title={item.label}
-          >
-            {item.icon}
-          </NavLink>
-        ))}
-        <div className="w-px h-6 bg-white/10 mx-2" />
-        <div className="flex gap-2">
-            <a href="https://github.com/wandriputra" target="_blank" className="p-2 text-gray-400 hover:text-white transition-colors"><Github size={18}/></a>
-            <a href="https://linkedin.com/in/wandriputra" target="_blank" className="p-2 text-gray-400 hover:text-white transition-colors"><Linkedin size={18}/></a>
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md">
+      <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="font-bold text-lg tracking-tight flex items-center gap-2">
+            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-black font-bold">W</div>
+            <span>Wandri Putra</span>
         </div>
+
+        <nav className="flex gap-1 bg-zinc-900/50 p-1 rounded-full border border-zinc-800/50">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.to}
+              className={({ isActive }) => 
+                `px-4 py-1.5 rounded-full text-sm font-medium transition-all ${isActive && item.to === '/' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-400 hover:text-zinc-200'}`
+              }
+            >
+              <span className="hidden sm:inline">{item.label}</span>
+              <span className="sm:hidden">{item.icon}</span>
+            </NavLink>
+          ))}
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 };
 
