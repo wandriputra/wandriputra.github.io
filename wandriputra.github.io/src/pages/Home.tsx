@@ -1,43 +1,41 @@
-import { profile } from '../data/profile';
+import { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import { getReadme } from '../utils/markdown';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const [content, setContent] = useState('');
+
+  useEffect(() => {
+    getReadme().then(setContent);
+  }, []);
+
   return (
-    <div className="max-w-4xl mx-auto prose prose-invert prose-headings:font-normal prose-h1:text-4xl prose-p:text-vscode-text prose-a:text-vscode-keyword hover:prose-a:underline">
-        <h1 className="border-b border-vscode-border pb-2 mb-6">Hi there, I'm {profile.name} 👋</h1>
-        
-        <p className="text-lg">
-            I am a <span className="text-vscode-func font-mono">{profile.role}</span> based in Indonesia.
-            <br/>
-            {profile.bio}
-        </p>
-
-        <h2 className="mt-8 mb-4">🛠 Tech Stack</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose">
-            <div className="bg-vscode-sidebar p-4 rounded border border-vscode-border">
-                <h3 className="text-vscode-keyword font-mono mb-2">frontend.ts</h3>
-                <div className="flex flex-wrap gap-2 font-mono text-sm text-vscode-string">
-                    {profile.skills.frontend.map(s => `'${s}'`).join(', ')}
-                </div>
-            </div>
-            <div className="bg-vscode-sidebar p-4 rounded border border-vscode-border">
-                <h3 className="text-vscode-keyword font-mono mb-2">backend.ts</h3>
-                <div className="flex flex-wrap gap-2 font-mono text-sm text-vscode-string">
-                    {profile.skills.backend.map(s => `'${s}'`).join(', ')}
-                </div>
-            </div>
-        </div>
-
-        <h2 className="mt-8 mb-4">🔗 Connect</h2>
-        <p>
-            You can find me on <a href={profile.socials.github}>GitHub</a>, <a href={profile.socials.linkedin}>LinkedIn</a>, or send me an <a href={profile.socials.email}>email</a>.
-        </p>
-
-        <div className="mt-8 p-4 border border-vscode-func/30 bg-vscode-func/10 rounded">
-            <p className="m-0 text-sm">
-                <span className="font-bold">Tip:</span> Use the explorer sidebar on the left to navigate to my <Link to="/projects" className="text-vscode-keyword">projects.json</Link> or read my <Link to="/blog" className="text-vscode-keyword">blog</Link>.
-            </p>
-        </div>
+    <div className="max-w-4xl mx-auto">
+      <div className="prose prose-invert prose-vscode max-w-none 
+        prose-headings:text-vscode-keyword prose-headings:font-normal
+        prose-h1:border-b prose-h1:border-vscode-border prose-h1:pb-2
+        prose-p:text-vscode-text prose-p:leading-relaxed
+        prose-a:text-vscode-func prose-a:no-underline hover:prose-a:underline
+        prose-code:text-vscode-string prose-code:bg-transparent prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
+        prose-pre:bg-[#1e1e1e] prose-pre:border prose-pre:border-vscode-border
+        prose-blockquote:border-l-vscode-accent prose-blockquote:bg-[#252526] prose-blockquote:py-1 prose-blockquote:not-italic
+        prose-hr:border-vscode-border
+      ">
+        <ReactMarkdown 
+          components={{
+            a: ({node, ...props}) => {
+                // Handle internal links (starting with /) using React Router Link
+                if (props.href && props.href.startsWith('/')) {
+                    return <Link to={props.href} {...props as any} />;
+                }
+                return <a target="_blank" rel="noopener noreferrer" {...props} />;
+            }
+          }}
+        >
+            {content}
+        </ReactMarkdown>
+      </div>
     </div>
   );
 };

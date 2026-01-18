@@ -47,3 +47,16 @@ export const getBlogs = async (): Promise<BlogPost[]> => {
 
   return blogs.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };
+
+export const getReadme = async (): Promise<string> => {
+  const modules = import.meta.glob('../content/README.md', { query: '?raw', import: 'default' });
+  const path = '../content/README.md';
+  
+  if (modules[path]) {
+    const rawContent = await modules[path]() as string;
+    // We don't need frontmatter for README, or we can strip it if added later
+    const { content } = parseFrontmatter(rawContent); 
+    return content;
+  }
+  return '# README.md not found';
+};

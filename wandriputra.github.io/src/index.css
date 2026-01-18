@@ -3,14 +3,25 @@
 @tailwind utilities;
 
 :root {
-  background-color: #1e1e1e;
+  background-color: #999999;
   color: #d4d4d4;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  overflow: hidden; /* App-like feel */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top left, #ededed, #bebebe);
+}
+
+/* Desktop: Add padding around the "window" */
+@media (min-width: 640px) {
+  body {
+    padding: 2rem;
+  }
 }
 
 /* Custom Scrollbar (VS Code style) */
