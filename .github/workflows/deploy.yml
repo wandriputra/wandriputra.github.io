@@ -43,10 +43,13 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Move dist to root
+        run: mv dist ../dist
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./wandriputra.github.io/dist
+          path: ./dist
 
   deploy:
     environment:
