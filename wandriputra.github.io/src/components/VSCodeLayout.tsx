@@ -17,7 +17,7 @@ const Sidebar = ({ isOpen, closeSidebar }: { isOpen: boolean; closeSidebar: () =
   if (!isOpen) return null;
 
   return (
-    <div className="w-30 bg-vscode-sidebar border-r border-vscode-border flex flex-col text-sm select-none flex-shrink-0 z-40 h-full sm:static sm:h-auto shadow-xl sm:shadow-none">
+    <div className="w-40 bg-vscode-sidebar border-r border-vscode-border flex flex-col text-sm select-none flex-shrink-0 z-40 h-full sm:static sm:h-auto shadow-xl sm:shadow-none">
       <div className="px-4 py-2 text-vscode-text-dim text-xs font-bold uppercase tracking-wider flex justify-between items-center h-9">
         <span>Explorer</span>
         {/* Mobile Close Button */}
@@ -28,8 +28,8 @@ const Sidebar = ({ isOpen, closeSidebar }: { isOpen: boolean; closeSidebar: () =
 
       {/* Project Root */}
       <div className="flex-1 overflow-y-auto">
-        <div
-          className="flex items-center px-2 py-1 cursor-pointer hover:bg-[#2a2d2e] text-vscode-text font-bold"
+        <div 
+          className="flex items-center px-2 py-1 cursor-pointer hover:bg-[#e8e8e8] text-vscode-text font-bold"
           onClick={() => setIsPortfolioOpen(!isPortfolioOpen)}
         >
           {isPortfolioOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
@@ -38,33 +38,33 @@ const Sidebar = ({ isOpen, closeSidebar }: { isOpen: boolean; closeSidebar: () =
 
         {isPortfolioOpen && (
           <div className="flex flex-col">
-            <NavLink
-              to="/"
+            <NavLink 
+              to="/" 
               onClick={closeSidebar}
-              className={({ isActive }) => `flex items-center pl-6 pr-2 py-1 cursor-pointer hover:bg-[#2a2d2e] ${isActive ? 'bg-[#37373d] text-white' : 'text-vscode-text'}`}
+              className={({ isActive }) => `flex items-center pl-6 pr-2 py-1 cursor-pointer hover:bg-[#e8e8e8] ${isActive ? 'bg-[#fff] border-l-2 border-vscode-accent text-vscode-accent' : 'text-vscode-text'}`}
             >
               <span className="ml-1">README.md</span>
             </NavLink>
 
-            <NavLink
-              to="/projects"
+            <NavLink 
+              to="/projects" 
               onClick={closeSidebar}
-              className={({ isActive }) => `flex items-center pl-6 pr-2 py-1 cursor-pointer hover:bg-[#2a2d2e] ${isActive ? 'bg-[#37373d] text-white' : 'text-vscode-text'}`}
+              className={({ isActive }) => `flex items-center pl-6 pr-2 py-1 cursor-pointer hover:bg-[#e8e8e8] ${isActive ? 'bg-[#fff] border-l-2 border-vscode-accent text-vscode-accent' : 'text-vscode-text'}`}
             >
-              <span className="ml-1">projects.json</span>
+              <span className="ml-1">my_projects.json</span>
             </NavLink>
 
-            <NavLink
-              to="/about"
+            <NavLink 
+              to="/about" 
               onClick={closeSidebar}
-              className={({ isActive }) => `flex items-center pl-6 pr-2 py-1 cursor-pointer hover:bg-[#2a2d2e] ${isActive ? 'bg-[#37373d] text-white' : 'text-vscode-text'}`}
+              className={({ isActive }) => `flex items-center pl-6 pr-2 py-1 cursor-pointer hover:bg-[#e8e8e8] ${isActive ? 'bg-[#fff] border-l-2 border-vscode-accent text-vscode-accent' : 'text-vscode-text'}`}
             >
-              <span className="ml-1">About.tsx</span>
+              <span className="ml-1">about_wandri.tsx</span>
             </NavLink>
-            <NavLink
-              to="/contact"
+             <NavLink 
+              to="/contact" 
               onClick={closeSidebar}
-              className={({ isActive }) => `flex items-center pl-6 pr-2 py-1 cursor-pointer hover:bg-[#2a2d2e] ${isActive ? 'bg-[#37373d] text-white' : 'text-vscode-text'}`}
+              className={({ isActive }) => `flex items-center pl-6 pr-2 py-1 cursor-pointer hover:bg-[#e8e8e8] ${isActive ? 'bg-[#fff] border-l-2 border-vscode-accent text-vscode-accent' : 'text-vscode-text'}`}
             >
               <span className="ml-1">contact.css</span>
             </NavLink>
@@ -72,28 +72,28 @@ const Sidebar = ({ isOpen, closeSidebar }: { isOpen: boolean; closeSidebar: () =
         )}
 
         {/* Blog Folder */}
-        <div
-          className="flex items-center px-2 py-1 cursor-pointer hover:bg-[#2a2d2e] text-vscode-text mt-1"
-          onClick={() => setIsBlogOpen(!isBlogOpen)}
+        <div 
+            className="flex items-center px-2 py-1 cursor-pointer hover:bg-[#e8e8e8] text-vscode-text mt-1"
+            onClick={() => setIsBlogOpen(!isBlogOpen)}
         >
-          {isBlogOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-          <span className="ml-1 text-vscode-func flex items-center gap-1">
-            @wandriputra <span className="text-vscode-text">/</span> blog
-          </span>
+             {isBlogOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+             <span className="ml-1 text-vscode-func flex items-center gap-1">
+                src <span className="text-vscode-text">/</span> blog
+             </span>
         </div>
-
+        
         {isBlogOpen && (
-          <div className="flex flex-col ml-4 border-l border-vscode-border">
-            <NavLink
-              to="/blog"
-              end
-              onClick={closeSidebar}
-              className={({ isActive }) => `flex items-center pl-4 pr-2 py-1 cursor-pointer hover:bg-[#2a2d2e] ${isActive ? 'bg-[#37373d] text-white' : 'text-vscode-text'}`}
-            >
-              <FileText size={14} className="text-vscode-text-dim mr-1" />
-              <span className="ml-1 italic">index.ts</span>
-            </NavLink>
-          </div>
+             <div className="flex flex-col ml- border-l border-vscode-border">
+                 <NavLink 
+                  to="/blog" 
+                  end
+                  onClick={closeSidebar}
+                  className={({ isActive }) => `flex items-center pl-4 py-1 cursor-pointer hover:bg-[#e8e8e8] ${isActive ? 'bg-[#fff] border-l-2 border-vscode-accent text-vscode-accent' : 'text-vscode-text'}`}
+                >
+                  <FileText size={14} className="text-vscode-text-dim mr-1" />
+                  <span className="ml-1 italic">index.ts</span>
+                </NavLink>
+             </div>
         )}
       </div>
     </div>
@@ -111,7 +111,7 @@ const ActivityBar = ({ toggleSidebar, isSidebarOpen }: { toggleSidebar: () => vo
         >
             <Files size={24} />
         </div>
-        <div className="p-2 border-l-2 border-transparent hover:text-white cursor-pointer hidden sm:block"><GitGraph size={24} /></div>
+        {/* <div className="p-2 border-l-2 border-transparent hover:text-white cursor-pointer hidden sm:block"><GitGraph size={24} /></div> */}
       </div>
       <div className="flex flex-col gap-4 mb-2">
       </div>
@@ -145,9 +145,9 @@ const TabBar = () => {
   return (
     <div className="flex bg-vscode-sidebar border-b border-vscode-border overflow-x-auto h-9 flex-shrink-0">
       <div className="flex items-center px-3 py-2 bg-vscode-bg border-t border-vscode-accent min-w-fit pr-4 text-sm text-vscode-text gap-2">
-        {getIcon(location.pathname)}
+        {/* {getIcon(location.pathname)} */}
         <span>{fileName}</span>
-        <span className="ml-2 hover:bg-vscode-text-dim/20 rounded-sm p-0.5 cursor-pointer">×</span>
+        {/* <span className="ml-2 hover:bg-vscode-text-dim/20 rounded-sm p-0.5 cursor-pointer">×</span> */}
       </div>
     </div>
   );

@@ -36,13 +36,13 @@ const BlogPost = () => {
          </Link>
       </div>
 
-      <div className="prose prose-invert prose-vscode max-w-none 
+      <div className="prose prose-slate prose-vscode max-w-none 
         prose-headings:text-vscode-keyword prose-headings:font-normal
         prose-p:text-vscode-text prose-p:leading-relaxed
-        prose-a:text-vscode-func prose-a:no-underline hover:prose-a:underline
-        prose-code:text-vscode-string prose-code:bg-transparent prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
-        prose-pre:bg-[#1e1e1e] prose-pre:border prose-pre:border-vscode-border
-        prose-blockquote:border-l-vscode-accent prose-blockquote:bg-[#252526] prose-blockquote:py-1 prose-blockquote:not-italic
+        prose-a:text-vscode-accent prose-a:no-underline hover:prose-a:underline
+        prose-code:text-vscode-string prose-code:bg-vscode-sidebar prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
+        prose-pre:bg-vscode-sidebar prose-pre:border prose-pre:border-vscode-border
+        prose-blockquote:border-l-vscode-accent prose-blockquote:bg-vscode-sidebar prose-blockquote:py-1 prose-blockquote:not-italic
         prose-hr:border-vscode-border
       ">
         <ReactMarkdown>{post.content}</ReactMarkdown>

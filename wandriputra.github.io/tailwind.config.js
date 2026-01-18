@@ -8,19 +8,19 @@ export default {
     extend: {
       colors: {
         vscode: {
-          bg: '#1e1e1e',          // Editor bg
-          sidebar: '#252526',     // Sidebar bg
-          activity: '#333333',    // Activity bar bg (far left)
-          status: '#007acc',      // Status bar (blue)
-          tab: '#2d2d2d',         // Inactive tab
-          'tab-active': '#1e1e1e',// Active tab
-          border: '#3e3e42',      // Borders
-          text: '#d4d4d4',        // Main text
-          'text-dim': '#858585',  // Comments/Dim text
-          accent: '#0e639c',      // Focus/Selection
-          keyword: '#569cd6',     // Blue keyword
-          string: '#ce9178',      // Orange string
-          func: '#dcdcaa',        // Yellow function
+          bg: '#ffffff',          // Editor bg (White)
+          sidebar: '#f3f3f3',     // Sidebar bg (Light Gray)
+          activity: '#2c2c2c',    // Activity bar bg (Dark for contrast in light theme)
+          status: '#007acc',      // Status bar (Stay blue)
+          tab: '#ececec',         // Inactive tab
+          'tab-active': '#ffffff',// Active tab
+          border: '#e5e5e5',      // Borders
+          text: '#333333',        // Main text (Dark Gray)
+          'text-dim': '#616161',  // Comments/Dim text
+          accent: '#007acc',      // Focus/Selection
+          keyword: '#0000ff',     // Blue keyword
+          string: '#a31515',      // Deep red string
+          func: '#795e26',        // Brown function
         }
       },
       fontFamily: {

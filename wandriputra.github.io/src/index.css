@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  background-color: #999999;
-  color: #d4d4d4;
+  background-color: #f8fafc;
+  color: #333333;
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top left, #ededed, #bebebe);
+  background: radial-gradient(circle at top left, #e2e8f0, #f8fafc);
 }
 
 /* Desktop: Add padding around the "window" */
@@ -24,7 +24,7 @@ body {
   }
 }
 
-/* Custom Scrollbar (VS Code style) */
+/* Custom Scrollbar (VS Code Light style) */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -35,11 +35,11 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #424242; 
+  background: #cccccc; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4f4f4f; 
+  background: #bbbbbb; 
 }
 
 ::-webkit-scrollbar-corner {
