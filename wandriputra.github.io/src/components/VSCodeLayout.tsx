@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { 
-  Files, GitGraph, ChevronRight, ChevronDown, 
-  FileCode, FileText, X 
+  Files, GitGraph, ChevronRight, ChevronDown, FileText, X 
 } from 'lucide-react';
-// --- Icons ---
-const ReactIcon = () => <span className="text-[#61dafb] text-xs font-bold px-1">TSX</span>;
-const JsonIcon = () => <span className="text-[#f1c40f] text-xs font-bold px-1">{ }</span>;
-const MdIcon = () => <span className="text-[#3b8eed] text-xs font-bold px-1">MD</span>;
+// // --- Icons ---
+// const ReactIcon = () => <span className="text-[#61dafb] text-xs font-bold px-1">TSX</span>;
+// const JsonIcon = () => <span className="text-[#f1c40f] text-xs font-bold px-1">{ }</span>;
+// const MdIcon = () => <span className="text-[#3b8eed] text-xs font-bold px-1">MD</span>;
 
 // --- Sidebar Component ---
 const Sidebar = ({ isOpen, closeSidebar }: { isOpen: boolean; closeSidebar: () => void }) => {
@@ -132,13 +131,13 @@ const TabBar = () => {
     return 'file';
   }
 
-  const getIcon = (path: string) => {
-    if (path === '/') return <MdIcon />;
-    if (path === '/projects') return <JsonIcon />;
-    if (path === '/about') return <ReactIcon />;
-    if (path === '/contact') return <FileCode size={14} className="text-vscode-func" />;
-    return <FileText size={14} className="text-vscode-text-dim" />;
-  }
+  // const getIcon = (path: string) => {
+  //   if (path === '/') return <MdIcon />;
+  //   if (path === '/projects') return <JsonIcon />;
+  //   if (path === '/about') return <ReactIcon />;
+  //   if (path === '/contact') return <FileCode size={14} className="text-vscode-func" />;
+  //   return <FileText size={14} className="text-vscode-text-dim" />;
+  // }
 
   const fileName = getFileName(location.pathname);
 
